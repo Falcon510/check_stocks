@@ -1,0 +1,25 @@
+name: Clarence Stock Market Report
+
+on:
+  workflow_dispatch:
+
+jobs:
+  report:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Generate Report
+        shell: pwsh
+        env:
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        run: |
+          ./scripts/Get-Stocks.ps1
+
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: stock-report
+          path: MarketReport.txt
