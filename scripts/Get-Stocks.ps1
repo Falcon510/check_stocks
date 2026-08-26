@@ -26,10 +26,10 @@ foreach ($Stock in $Stocks)
 
     $Data = Invoke-RestMethod -Uri $Uri
 
-    $Lines += "$Stock : $($Data.c) ($($Data.dp)%)"
+    $Lines += "$Stock:$('{0:N2}' -f $Data.c)($('{0:N1}' -f $Data.dp)%)"
 }
 
-$Today = Get-Date
+$Today = Get-Date -Format "MM-dd-yy"
 
 $Report = @"
 
@@ -55,7 +55,7 @@ $Credential = New-Object `
     ($Username, $SecurePassword)
 
 Send-MailMessage `
-    -From $Username `
+    -From "Clarence Ho <$Username>" `
     -To $env:SMS_TO `
     -Subject "Stock $Today" `
     -Body $Report `
