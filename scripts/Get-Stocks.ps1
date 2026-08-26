@@ -42,4 +42,30 @@ $($Lines -join "`n")
 
 $Report | Out-File MarketReport.txt
 
+
+$SMTPServer = "smtp.gmail.com"
+$SMTPPort = 587
+
+$Username = $env:SMTP_USERNAME
+$Password = $env:SMTP_PASSWORD
+
+$SecurePassword = ConvertTo-SecureString `
+    $Password `
+    -AsPlainText `
+    -Force
+
+$Credential = New-Object `
+    System.Management.Automation.PSCredential `
+    ($Username, $SecurePassword)
+
+Send-MailMessage `
+    -From $Username `
+    -To $env:SMS_TO `
+    -Subject "Stocks update" `
+    -Body $Report `
+    -SmtpServer $SMTPServer `
+    -Port $SMTPPort `
+    -UseSsl `
+    -Credential $Credential
+
 Write-Host $Report
