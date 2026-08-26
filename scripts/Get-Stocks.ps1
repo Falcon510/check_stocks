@@ -15,7 +15,7 @@ $Stocks = @(
     "SKHY",
     "AMD",
     "GOOG",
-    "TSLA",
+    "TSLA"
 )
 
 $Lines = @()
