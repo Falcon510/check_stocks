@@ -16,7 +16,7 @@ jobs:
         env:
           FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
         run: |
-          ./scripts/Get-Stocks.ps1
+          ./Get-Stocks.ps1
 
       - name: Upload Report
         uses: actions/upload-artifact@v4
