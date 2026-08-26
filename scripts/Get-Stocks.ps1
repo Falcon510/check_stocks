@@ -32,11 +32,12 @@ foreach ($Stock in $Stocks)
 $Today = Get-Date
 
 $Report = @"
-#Market Close Report
+<#
+Market Close Report
 
-#Generated:
-#$Today
-
+Generated:
+$Today
+#>
 $($Lines -join "`n")
 "@
 
