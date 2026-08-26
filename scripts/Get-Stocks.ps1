@@ -1,10 +1,21 @@
 $ApiKey = $env:FINNHUB_API_KEY
 
 $Stocks = @(
+    "LRCX",
     "AAPL",
     "MSFT",
     "NVDA",
-    "VOO"
+    "SPCX",
+    "INTC",
+    "TSM",
+    "MU",
+    "SNDK",
+    "SKHY",
+    "AMD",
+    "GOOG",
+    "TSLA",
+    "QQQM",
+    "VCX"
 )
 
 $Lines = @()
