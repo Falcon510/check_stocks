@@ -57,7 +57,7 @@ $Credential = New-Object `
 Send-MailMessage `
     -From $Username `
     -To $env:SMS_TO `
-    -Subject "Stocks update" `
+    -Subject "Stock $Today" `
     -Body $Report `
     -SmtpServer $SMTPServer `
     -Port $SMTPPort `
