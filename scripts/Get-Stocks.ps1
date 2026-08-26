@@ -5,6 +5,8 @@ $Stocks = @(
     "AAPL",
     "MSFT",
     "NVDA",
+    "QQQM",
+    "VCX",
     "SPCX",
     "INTC",
     "TSM",
@@ -14,8 +16,6 @@ $Stocks = @(
     "AMD",
     "GOOG",
     "TSLA",
-    "QQQM",
-    "VCX"
 )
 
 $Lines = @()
@@ -29,7 +29,7 @@ foreach ($Stock in $Stocks)
     $Lines += "$Stock : $($Data.c) ($('{0:N1}' -f $Data.dp)%)"
 }
 
-$Today = Get-Date -Format "MM-dd-yy"
+$Today = Get-Date -Format "MM/dd/yy"
 
 $Report = @"
 
