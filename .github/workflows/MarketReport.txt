@@ -1,5 +1,3 @@
-Market Close Report
-
 AAPL $245.22
 MSFT $612.44
 NVDA $189.07
