@@ -29,6 +29,16 @@ foreach ($Stock in $Stocks)
     $Lines += "$Stock : $($Data.c) ($($Data.dp)%)"
 }
 
+$Today = Get-Date
+
+$Report = @"
+
+Market Close Report
+
+Generated:
+$Today
+
+
 $($Lines -join "`n")
 "@
 
