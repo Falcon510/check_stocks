@@ -26,7 +26,7 @@ foreach ($Stock in $Stocks)
 
     $Data = Invoke-RestMethod -Uri $Uri
 
-    $Lines += "$Stock:$('{0:N2}' -f $Data.c)($('{0:N1}' -f $Data.dp)%)"
+    $Lines += "$Stock : $($Data.c) ($('{0:N1}' -f $Data.dp)%)"
 }
 
 $Today = Get-Date -Format "MM-dd-yy"
