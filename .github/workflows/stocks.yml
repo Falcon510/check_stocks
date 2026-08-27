@@ -3,11 +3,12 @@ name: Clarence Stock Market Report
 on:
   workflow_dispatch:
   
+  #schedule:
+  #  - cron: '51 0 * * 1-5'
+  
   schedule:
-    - cron: '51 0 * * 1-5'
-    - cron: '54 0 * * 1-5'
-    - cron: '55 0 * * 1-5'
-    - cron: '56 0 * * 1-5'
+  - cron: '*/5 * * * *'
+  
 jobs:
   report:
     runs-on: windows-latest
