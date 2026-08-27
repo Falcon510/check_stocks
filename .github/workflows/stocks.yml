@@ -2,9 +2,8 @@ name: Clarence Stock Market Report v2
 
 on:
   workflow_dispatch:
-  
   schedule:
-  - cron: '*/5 * * * *'
+    - cron: '*/5 * * * *'
   
 jobs:
   report:
