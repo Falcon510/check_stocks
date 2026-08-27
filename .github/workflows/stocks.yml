@@ -1,9 +1,9 @@
-name: Clarence Stock Market Report
+name: Daily Stock Market Report
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '0 21 * * 1-5'
   
 jobs:
   report:
