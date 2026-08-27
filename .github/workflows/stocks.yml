@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   
   schedule:
-  - cron: '23 24 * * 1-5'
+  - cron: '26 24 * * 1-5'
 
 jobs:
   report:
